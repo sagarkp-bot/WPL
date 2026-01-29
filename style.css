@@ -48,6 +48,7 @@ figure
     background-color: burlywood;
     box-shadow: 10px 10px 10px black;
     border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
 figure img 
@@ -57,6 +58,35 @@ figure img
 }
 
 figure:hover {
-    transform: scale(1.03);
+    transform: scale(1.1);
 }
+
+table {
+    
+    border-collapse: collapse;      
+    margin: 20px ;
+}
+
+th, td {
+    border: 1px solid black;        
+    padding: 10px;                  
+    text-align: center;             
+}
+
+thead th {
+    background-color: #2c3e50;    
+    color: white;
+}
+
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+    color: rgb(155, 0, 26);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #8f8080;
+    color: rgb(155, 0, 26);
+}
+
 
