@@ -5,6 +5,41 @@
     <title>Sagar'sBookStore/Comparison</title>
 </head>
 <body>
+    <center>
+    
+    <div id="BookDetails"></div>
+    <div id="TotalPrice"></div>
+    <div id="FinalPrice"></div>
+    <div id="CategoryMessage"></div>
+   
+    <script> 
+    var title = "Meditations";  
+    var price = 350;           
+           
+
+    document.getElementById("BookDetails").innerText = title + "\n  Price: " + price + "rs \n Availability: In Stock ";
+
+var itemPrice = 450;      
+var quantity = 3;         
+var total = itemPrice * quantity;
+
+document.getElementById("TotalPrice").innerText = "Total Price = ₹" + total;
+
+var finalPrice;
+
+if (total > 1000) {
+    
+    finalPrice = total - (total * 0.10);
+    document.getElementById("FinalPrice").innerText = "Discount Applied! Final Price: ₹" + finalPrice;
+} else {
+   
+    finalPrice = total;
+    document.getElementById("FinalPrice").innerText = "No Discount. Final Price: ₹" + finalPrice;
+}
+
+
+
+</script>
 
     <header>
         <h1>Book Price Comparison</h1>
@@ -62,6 +97,6 @@
     <footer>
         <p>&copy; 2026 Sagar's Book Store</p>
     </footer>
-
+</center>
 </body>
 </html>
