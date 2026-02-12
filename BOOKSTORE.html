@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+ 
     <title>Sagar's Book Store</title>
 
     <link rel="stylesheet" href="style.css">
@@ -28,8 +29,37 @@
 
 </head>
 <body>
+  
     <center>
-   
+     <h1> <div id = "Hello Message"></div> </h1>
+<div id="BookList"></div>    
+<div id="Cart"></div>
+<div id="CartNumber"></div>
+<script>
+    
+    document.getElementById("Hello Message").innerText = "Welcome To My BookStore";
+
+     
+var books = ["HTML", "CSS", "JavaScript", "Python"];
+var listHTML = "<ul>";
+
+for (var i = 0; i < books.length; i++) {
+    
+    listHTML += "<li>" + books[i] + " <button onclick=\"addToCart('" + books[i] + "')\">Add to Cart</button></li>";
+}
+listHTML += "</ul>";
+document.getElementById("BookList").innerHTML = listHTML;
+
+var cart = []; 
+
+function addToCart(bookName) {
+    cart.push(bookName); 
+    document.getElementById("Cart").innerText = "Cart Items: " + cart.join(", "); 
+    document.getElementById("CartNumber").innerText = "No of Items In Cart: " + cart.length;
+}
+
+
+</script>
 
   <header style="background-color: navy; padding: 20px; border: 7px solid #ff0000;">
     <h1 style="color: rgb(255, 103, 2);">Sagar's Book Store</h1>
@@ -49,7 +79,23 @@
         </b>
     </nav>
 
+    <section>
+    <h3>Image Map</h3>
+    <p>Click a color to go to the book details:</p>
     
+    <img src="imagemap.jpg" alt="Book Selection Map" usemap="#bookmap" width="300" height="300">
+
+    <map name="bookmap">
+        <area shape="rect" coords="100,0,200,100" alt="Meditations" href="meditations.jpg">
+        
+        <area shape="rect" coords="0,100,100,200" alt="Marley and Me" href="mondays@7.jpg">
+        
+        <area shape="rect" coords="200,100,300,200" alt="Atomic Habits" href="marleyandme.jpg">
+        
+        <area shape="rect" coords="100,200,200,300" alt="Mondays @ 7" href="atomichabits.jpg">
+    </map>
+</section>
+
 
     <article>
         <h1>Meditations</h1>
@@ -101,26 +147,11 @@
 
     <hr>
 
-    <section>
-    <h3>Image Map</h3>
-    <p>Click a color to go to the book details:</p>
     
-    <img src="imagemap.jpg" alt="Book Selection Map" usemap="#bookmap" width="300" height="300">
-
-    <map name="bookmap">
-        <area shape="rect" coords="100,0,200,100" alt="Meditations" href="meditations.jpg">
-        
-        <area shape="rect" coords="0,100,100,200" alt="Marley and Me" href="mondays@7.jpg">
-        
-        <area shape="rect" coords="200,100,300,200" alt="Atomic Habits" href="marleyandme.jpg">
-        
-        <area shape="rect" coords="100,200,200,300" alt="Mondays @ 7" href="atomichabits.jpg">
-    </map>
-</section>
-
     <footer>
         <p>&copy; 2026 Sagar's Book Store. All rights reserved.</p>
     </footer>
 </center>
+
 </body>
 </html>
