@@ -3,61 +3,136 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <title>Login Page</title>
+    <style>
+        .error { color: red; font-size: 14px; }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>User Login</h1>
-    </header>
+<header>
+    <h1>User Login</h1>
+</header>
 
-    <nav>
-        <a href="BOOKSTORE.html">Home</a>
-    </nav>
+<nav>
+    <a href="BOOKSTORE.html">Home</a>
+</nav>
 
-    <center>
-        <fieldset>
-            <legend>User Registration</legend>
+<center>
+<fieldset>
+<legend>User Registration</legend>
 
-            <form>
-                <br>
-                User Name:  
-                <input type="text" name="user">
-                <br><br>
+<form onsubmit="return validateForm()">
 
-                Password: 
-                <input type="password" name="pw">
-                <br><br>
+    <br>
+    User Name:
+    <input type="text" id="username" name="user">
+    <span id="userError" class="error"></span>
+    <br><br>
 
-                Email: 
-                <input type="email" name="mail">
-                <br><br>
+    Password:
+    <input type="password" id="password" name="pw">
+    <span id="passError" class="error"></span>
+    <br><br>
 
-                Gender: 
-                <input type="radio" name="g" value="m"> Male
-                <input type="radio" name="g" value="f"> Female
-                <br><br>
+    Email:
+    <input type="email" id="email" name="mail">
+    <span id="emailError" class="error"></span>
+    <br><br>
 
-                Date of Birth: 
-                <input type="date" name="birthday">
-                <br><br>
+    Gender:
+    <input type="radio" name="g" value="m"> Male
+    <input type="radio" name="g" value="f"> Female
+    <span id="genderError" class="error"></span>
+    <br><br>
 
-                Upload Photo: 
-                <input type="file" name="photo">
-                <br><br>
+    Date of Birth:
+    <input type="date" id="dob" name="birthday">
+    <span id="dobError" class="error"></span>
+    <br><br>
 
-                <input type="checkbox" name="agree"> I agree to the rules
-                <br><br>
+    Upload Photo:
+    <input type="file" id="photo" name="photo">
+    <span id="photoError" class="error"></span>
+    <br><br>
 
-                <input type="submit" value="Register">
-                
-                <br>
-            </form>
-        </fieldset>
-    </center>
+    <input type="checkbox" id="agree" name="agree"> I agree to the rules
+    <span id="agreeError" class="error"></span>
+    <br><br>
 
-    <footer>
-        <p>&copy; 2026 Sagar's Book Store</p>
-    </footer>
+    <input type="submit" value="Register">
+    <br>
 
+</form>
+</fieldset>
+</center>
+
+<footer>
+    <p>&copy; 2026 Sagar's Book Store</p>
+</footer>
+
+<script>
+function validateForm() {
+
+    var valid = true;
+
+    // Clear old error messages
+    document.getElementById("userError").innerHTML = "";
+    document.getElementById("passError").innerHTML = "";
+    document.getElementById("emailError").innerHTML = "";
+    document.getElementById("genderError").innerHTML = "";
+    document.getElementById("dobError").innerHTML = "";
+    document.getElementById("photoError").innerHTML = "";
+    document.getElementById("agreeError").innerHTML = "";
+
+    // USERNAME
+    var username = document.getElementById("username").value;
+    if (username == "") {
+        document.getElementById("userError").innerHTML = "Please enter username";
+        valid = false;
+    }
+
+    // PASSWORD
+    var password = document.getElementById("password").value;
+    if (password.length < 6) {
+        document.getElementById("passError").innerHTML = "Password must be at least 6 characters";
+        valid = false;
+    }
+
+    // EMAIL
+    var email = document.getElementById("email").value;
+    if (email == "") {
+        document.getElementById("emailError").innerHTML = "Email cannot be empty";
+        valid = false;
+    } 
+    else if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+        document.getElementById("emailError").innerHTML = "Enter proper email";
+        valid = false;
+    }
+
+
+    // DATE OF BIRTH
+    var dob = document.getElementById("dob").value;
+    if (dob == "") {
+        document.getElementById("dobError").innerHTML = "Select date of birth";
+        valid = false;
+    }
+
+    // PHOTO
+    var photo = document.getElementById("photo").value;
+    if (photo == "") {
+        document.getElementById("photoError").innerHTML = "Upload photo";
+        valid = false;
+    }
+
+    // CHECKBOX
+    var agree = document.getElementById("agree");
+    if (!agree.checked) {
+        document.getElementById("agreeError").innerHTML = "You must agree first";
+        valid = false;
+    }
+
+    return valid;
+}
+</script>
 </body>
 </html>
