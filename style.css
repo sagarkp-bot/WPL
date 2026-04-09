@@ -90,3 +90,33 @@ tbody tr:nth-child(odd) {
 }
 
 
+/* Offer Box Styling */
+.offer-box {
+    background-color: yellow;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 10px;
+    text-align: center;
+
+    
+    box-shadow: 0 0 10px red;
+
+    
+    animation: glow 1s infinite alternate;
+}
+
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px red;
+        opacity: 0.8;
+    }
+    to {
+        box-shadow: 0 0 20px orange;
+        opacity: 1;
+    }
+}
+
