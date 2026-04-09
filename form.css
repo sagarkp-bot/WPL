@@ -1,0 +1,41 @@
+/* Improve input boxes  */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+input[type="file"] {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Focus effect  */
+input:focus {
+    border: 2px solid blue;
+    outline: none;
+}
+
+/* Button styling  */
+input[type="submit"] {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+/* Hover effect */
+input[type="submit"]:hover {
+    background-color: gray;
+    color: white;
+}
+
+/* Fieldset improvement  */
+fieldset {
+    border-radius: 10px;
+    padding: 15px;
+}
+
+/* Legend styling */
+legend {
+    font-weight: bold;
+    padding: 5px;
+}
