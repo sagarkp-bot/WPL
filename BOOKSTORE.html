@@ -29,12 +29,15 @@
 
 </head>
 <body>
-  
+  <div class="offer-box">
+    🔥 Special Offer! Get 10% OFF on orders above ₹1000 🔥
+</div>
     <center>
      <h1> <div id = "Hello Message"></div> </h1>
 <div id="BookList"></div>    
 <div id="Cart"></div>
 <div id="CartNumber"></div>
+<div id="bookInfo"></div>
 <script>
     
     document.getElementById("Hello Message").innerText = "Welcome To My BookStore";
@@ -57,8 +60,12 @@ function addToCart(bookName) {
     document.getElementById("Cart").innerText = "Cart Items: " + cart.join(", "); 
     document.getElementById("CartNumber").innerText = "No of Items In Cart: " + cart.length;
 }
+// simple message
+document.getElementById("msg").innerText = "Welcome to Sagar's Book Store! Explore our collection and find your next great read.";
 
 
+document.getElementById("bookInfo").innerText =
+"Title: " + title + " Price: " + price + " In Stock: " + inStock;
 </script>
 
   <header style="background-color: navy; padding: 20px; border: 7px solid #ff0000;">
